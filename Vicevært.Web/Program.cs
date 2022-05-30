@@ -31,6 +31,13 @@ builder.Services.AddHttpClient<IBookingService, BookingServiceProxy>
             new Uri("https://localhost:7242");
     });
 
+builder.Services.AddHttpClient<ITidsRegistreringService, TidsRegistreringServiceProxy>
+    (client =>
+    {
+        client.BaseAddress =
+        new Uri("https://localhost:7242/");
+    });
+
 builder.Services.AddRefitClient<IBoligData>().ConfigureHttpClient(c =>
 {
     c.BaseAddress = new Uri("https://boligdataapi.azurewebsites.net");
