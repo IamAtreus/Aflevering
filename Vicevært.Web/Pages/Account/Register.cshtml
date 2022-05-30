@@ -1,0 +1,115 @@
+﻿@page
+@model Vicevært.Web.Pages.Account.RegisterModel
+@{
+}
+
+<h3>Bruger registrering</h3>
+<div class="container border" style="padding:20px">
+    <form method="post">
+        <div class="text-danger" asp-validation-summary="All"></div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="RegisterViewModel.Email"></label>
+            </div>
+            <div class="col">
+                <input type="text" asp-for="RegisterViewModel.Email" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="RegisterViewModel.Email"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="RegisterViewModel.Password"></label>
+            </div>
+            <div class="col">
+                <input type="password" asp-for="RegisterViewModel.Password" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="RegisterViewModel.Password"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="RegisterViewModel.ForNavn"></label>
+            </div>
+            <div class="col">
+                <input type="text" asp-for="RegisterViewModel.ForNavn" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="RegisterViewModel.ForNavn"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="RegisterViewModel.EfterNavn"></label>
+            </div>
+            <div class="col">
+                <input type="text" asp-for="RegisterViewModel.EfterNavn" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="RegisterViewModel.EfterNavn"></span>
+        </div>
+        
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="RegisterViewModel.Gade"></label>
+            </div>
+            <div class="col">
+                <input type="text" asp-for="RegisterViewModel.Gade" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="RegisterViewModel.Gade"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="RegisterViewModel.HusNummer"></label>
+            </div>
+            <div class="col">
+                <input type="text" asp-for="RegisterViewModel.HusNummer" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="RegisterViewModel.HusNummer"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="RegisterViewModel.PostNummer"></label>
+            </div>
+            <div class="col">
+                <input type="text" asp-for="RegisterViewModel.PostNummer" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="RegisterViewModel.PostNummer"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="RegisterViewModel.By"></label>
+            </div>
+            <div class="col">
+                <input type="text" asp-for="RegisterViewModel.By" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="RegisterViewModel.By"></span>
+        </div>
+
+
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="RegisterViewModel.Kategori"></label>
+            </div>
+            <div class="col">
+                <input type="text" asp-for="RegisterViewModel.Kategori" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="RegisterViewModel.Kategori"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="RegisterViewModel.Telefon"></label>
+            </div>
+            <div class="col">
+                <input type="text" asp-for="RegisterViewModel.Telefon" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="RegisterViewModel.Telefon"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <input type="submit" class ="btn-primary btn-primary" value="Opret bruger" />
+
+            </div>
+        </div>
+    </form>
+</div>
