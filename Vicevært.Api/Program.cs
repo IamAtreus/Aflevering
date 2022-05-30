@@ -35,6 +35,11 @@ builder.Services.AddScoped<IBookingCommand, BookingCommand>();
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 builder.Services.AddScoped<IBookingDomainServices, BookingDomainService>();
+builder.Services.AddControllers();
+builder.Services.AddScoped<ITidsRegistreringQuery, TidsRegistreringQuery>();
+builder.Services.AddScoped<ITidsRegistreringCommand, TidsRegistreringCommand>();
+builder.Services.AddScoped<ITidsRegistreringRepository, TidsRegistreringRepository>();
+builder.Services.AddScoped<ITidsRegistreringDomainService, TidsRegistreringDomainService>();
 
 
 

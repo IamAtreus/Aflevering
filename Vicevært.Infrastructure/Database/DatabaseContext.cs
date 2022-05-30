@@ -22,5 +22,6 @@ namespace Vicevært.Infrastructure.Database
         public DbSet<Vicevært.Domain.Entities.Lejemaal> Lejemaal { get; set; }
         public DbSet<Vicevært.Domain.Entities.Lejer> Lejer { get; set; }
         public DbSet<Vicevært.Domain.Entities.Booking> Bookings { get; set; }
+        public DbSet<Domain.Entities.TidsRegistrering> TidsRegistrerings { get; set; }
     }
 }
