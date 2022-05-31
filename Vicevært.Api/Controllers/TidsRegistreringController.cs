@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿
 using Microsoft.AspNetCore.Mvc;
 using Vicevært.Application.Contract;
 using Vicevært.Application.Contract.Dtos;
@@ -7,7 +7,8 @@ using Vicevært.Contract.Dtos;
 
 namespace Vicevært.Api.Controllers
 {
-    [Microsoft.AspNetCore.Components.Route("api/TidsRegistrering")]
+    [Route("/api/TidsRegistrering")]
+    //[Microsoft.AspNetCore.Components.Route("api/TidsRegistrering")]
     [ApiController]
     public class TidsRegistreringController : ControllerBase, ITidsRegistreringService
     {

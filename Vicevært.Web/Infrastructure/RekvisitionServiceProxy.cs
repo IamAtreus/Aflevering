@@ -33,6 +33,7 @@ namespace Vicevært.Web.Infrastructure
 
         async Task<IEnumerable<RekvisitionDto>> IRekvisitionService.GetAsync()
         {
+
             return await _client.GetFromJsonAsync<IEnumerable<RekvisitionDto>>($"https://localhost:7008/api/Rekvisition");
         }
     }
