@@ -12,11 +12,12 @@ namespace Vicevært.Api.Controllers
         private readonly IBookingCommand _bookingCommand;
         private readonly IBookingQuery _bookingQuery;
 
-        public BookingController(IBookingCommand bookingCommand)
+        public BookingController(IBookingCommand bookingCommand, IBookingQuery bookingQuery)
         {
 
             _bookingCommand = bookingCommand;
-        }
+            _bookingQuery = bookingQuery;
+    }
 
         // POST api/<BookingController>
         [HttpPost]

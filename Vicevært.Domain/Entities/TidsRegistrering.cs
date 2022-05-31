@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace Vicevært.Domain.Entities
 {
     public class TidsRegistrering
     {
+        [NotMapped]
         public IServiceProvider? ServiceProvider { get; set; }
         public TidsRegistrering(/*IServiceProvider serviceProvider,*/ DateTime start, DateTime end, int pedelId, int rekvisitionsId)
         {
@@ -27,7 +29,7 @@ namespace Vicevært.Domain.Entities
             RekvisitionsId = rekvisitionsId;
             TidsRegistreringsId = tidsRegistreringsid;
         }
-
+        [Key]
         public int TidsRegistreringsId { get; set; }
         public DateTime Start { get; set; }
         public DateTime End { get; set; }

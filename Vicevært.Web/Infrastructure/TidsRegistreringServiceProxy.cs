@@ -36,7 +36,7 @@ namespace Vicevært.Web.Infrastructure
 
         async Task<IEnumerable<TidsRegistreringDto>> ITidsRegistreringService.GetAsync()
         {
-            return await _client.GetFromJsonAsync<IEnumerable<TidsRegistreringDto>>($"api/TidsRegistrering");
+            return await _client.GetFromJsonAsync<IEnumerable<TidsRegistreringDto>>($"https://localhost:7008/api/TidsRegistrering");
         }
     }
 }

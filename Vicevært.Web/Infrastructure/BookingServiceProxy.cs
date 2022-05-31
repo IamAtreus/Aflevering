@@ -26,7 +26,7 @@ namespace Vicevært.Web.Infrastructure
 
         async Task<BookingDto?> IBookingService.GetAsync(int id)
         {
-            return await _client.GetFromJsonAsync<BookingDto?>($"https://localhost:7008/api/Booking/{id}");
+            return await _client.GetFromJsonAsync<BookingDto?>($"api/Booking/{id}");
         }
 
         async Task<IEnumerable<BookingDto>> IBookingService.GetAsync()
