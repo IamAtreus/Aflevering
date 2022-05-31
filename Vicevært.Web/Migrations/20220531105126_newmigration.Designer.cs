@@ -12,8 +12,8 @@ using Vicevært.Infrastructure.Database;
 namespace Vicevært.Web.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20220529090749_bookingsadded")]
-    partial class bookingsadded
+    [Migration("20220531105126_newmigration")]
+    partial class newmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -130,6 +130,26 @@ namespace Vicevært.Web.Migrations
                     b.ToTable("Lejer");
                 });
 
+            modelBuilder.Entity("Vicevært.Domain.Entities.Pedel", b =>
+                {
+                    b.Property<int>("PedelId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PedelId"), 1L, 1);
+
+                    b.Property<string>("PedelNavn")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TelefonNr")
+                        .HasColumnType("int");
+
+                    b.HasKey("PedelId");
+
+                    b.ToTable("Pedel");
+                });
+
             modelBuilder.Entity("Vicevært.Domain.Entities.Rekvisition", b =>
                 {
                     b.Property<int>("RekvisitionId")
@@ -153,6 +173,35 @@ namespace Vicevært.Web.Migrations
                     b.HasIndex("LejerId");
 
                     b.ToTable("Rekvisition");
+                });
+
+            modelBuilder.Entity("Vicevært.Domain.Entities.TidsRegistrering", b =>
+                {
+                    b.Property<int>("TidsRegistreringsId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TidsRegistreringsId"), 1L, 1);
+
+                    b.Property<DateTime>("End")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PedelId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RekvisitionsId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Start")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("TidsRegistreringsId");
+
+                    b.HasIndex("PedelId");
+
+                    b.HasIndex("RekvisitionsId");
+
+                    b.ToTable("TidsRegistrerings");
                 });
 
             modelBuilder.Entity("Vicevært.Domain.Entities.Booking", b =>
@@ -186,6 +235,25 @@ namespace Vicevært.Web.Migrations
                         .IsRequired();
 
                     b.Navigation("Lejer");
+                });
+
+            modelBuilder.Entity("Vicevært.Domain.Entities.TidsRegistrering", b =>
+                {
+                    b.HasOne("Vicevært.Domain.Entities.Pedel", "Pedel")
+                        .WithMany()
+                        .HasForeignKey("PedelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Vicevært.Domain.Entities.Rekvisition", "Rekvisition")
+                        .WithMany()
+                        .HasForeignKey("RekvisitionsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pedel");
+
+                    b.Navigation("Rekvisition");
                 });
 #pragma warning restore 612, 618
         }
