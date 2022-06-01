@@ -40,6 +40,11 @@ builder.Services.AddScoped<ITidsRegistreringQuery, TidsRegistreringQuery>();
 builder.Services.AddScoped<ITidsRegistreringCommand, TidsRegistreringCommand>();
 builder.Services.AddScoped<ITidsRegistreringRepository, TidsRegistreringRepository>();
 builder.Services.AddScoped<ITidsRegistreringDomainService, TidsRegistreringDomainService>();
+builder.Services.AddScoped<ILejerQuery, LejerQuery>();
+//builder.Services.AddScoped<ILejerCommand, LejerCommand>();
+builder.Services.AddScoped<ILejerRepository, LejerRepository>();
+builder.Services.AddScoped<ILejerRepository, LejerRepository>();
+builder.Services.AddScoped<ILejerDomainService, LejerDomainService>();
 
 
 

@@ -75,6 +75,13 @@ builder.Services.AddHttpClient<ITidsRegistreringService, TidsRegistreringService
         new Uri("https://localhost:7242/");
     });
 
+builder.Services.AddHttpClient<ILejerService, LejerServiceProxy>
+    (client =>
+    {
+        client.BaseAddress =
+        new Uri("https://localhost:7242/");
+    });
+
 builder.Services.AddRefitClient<IBoligData>().ConfigureHttpClient(c =>
 {
     c.BaseAddress = new Uri("https://boligdataapi.azurewebsites.net");
