@@ -38,7 +38,10 @@
                     <label asp-for="Rekvisition.First().RekvisitionType"></label>
                 </th>
                 <th>
-                    <label>Action</label>
+                    <label asp-for="Rekvisition.First().Kommentar"></label>
+                </th>
+                <th>
+                    <label asp-for="Rekvisition.First().LejerId"></label>
                 </th>
             </tr>
             </thead>
@@ -58,11 +61,11 @@
                     <td>
                         @item.LejerId
                     </td>
-                    <td>
+@*                    <td>
                         <a asp-page="./Edit" asp-route-id="@item.RekvisitionId">Edit</a> |
                         <a asp-page="./Details" asp-route-id="@item.RekvisitionId">Details</a> |
                         <a asp-page="./Delete" asp-route-id="@item.RekvisitionId">Delete</a>
-                    </td>
+                    </td>*@
                 </tr>
             }
             </tbody>

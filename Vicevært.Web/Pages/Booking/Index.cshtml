@@ -66,8 +66,10 @@
                        <tbody>
             @foreach (var item in Model.Lejemaal)
             {
-                <tr>
-                    <td>
+                if (item.IsBookable == true)
+                {
+                            <tr>
+                                <td>
                         @item.LejemålId
                     </td>
                     <td>
@@ -90,14 +92,14 @@
                     </td>
                     <td>
                         @item.CountryCode
-                    </td>
+                    </td>                 
 
-                    <td>
-                        <a asp-page="./Create" asp-route-id="@item.LejemålId">Book lejlighed</a> |
-
-                    </td>
                 </tr>
+                }
             }
+
+           
+          
 
 
 
@@ -108,6 +110,9 @@
 
               </table>
     </article>
+     <div class="text-center">
+                  <a asp-page="./Create" class="btn btn-primary" >Opret booking</a> 
+            </div>
 
 </section>
 

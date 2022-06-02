@@ -21,6 +21,8 @@ namespace Vicevært.Domain.Entities
         public int LejemålId { get; set; }
         [ForeignKey("LejemålId")]
         public virtual Lejemaal Lejemaal { get; set; }
+        [Timestamp]
+        public byte[] Version { get; set; }
 
 
 

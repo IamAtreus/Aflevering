@@ -29,7 +29,8 @@ namespace Vicevært.Infrastructure.Queries
                 BookingId = result.BookingId,
                 Start = result.Start,
                 Slut = result.Slut,
-                LejemålId = result.LejemålId
+                LejemålId = result.LejemålId,
+                Version = result.Version
             };
         }
 

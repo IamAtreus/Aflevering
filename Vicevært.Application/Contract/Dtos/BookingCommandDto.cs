@@ -13,5 +13,6 @@ namespace Vicevært.Application.Contract.Dtos
         public DateTime Start { get; set; }
         public DateTime Slut { get; set; }
         public int LejemålId { get; set; }
+        public byte[] Version { get; set; }
     }
 }

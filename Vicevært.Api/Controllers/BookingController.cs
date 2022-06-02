@@ -24,7 +24,7 @@ namespace Vicevært.Api.Controllers
         public async Task<ActionResult> CreateAsync([FromBody] BookingDto value)
         {
             await _bookingCommand.CreateAsync(new BookingCommandDto
-            { BookingId = value.BookingId, Slut = value.Slut, Start = value.Start, LejemålId = value.LejemålId });
+            { BookingId = value.BookingId, Slut = value.Slut, Start = value.Start, LejemålId = value.LejemålId, Version = value.Version });
             return Ok();
         }
 
@@ -35,7 +35,7 @@ namespace Vicevært.Api.Controllers
             var result = new List<BookingDto>();
             var bookings = await _bookingQuery.GetBookingsAsync();
             bookings.ToList()
-                .ForEach(a => result.Add(new BookingDto { BookingId = a.BookingId, Slut = a.Slut, Start = a.Start, LejemålId = a.LejemålId }));
+                .ForEach(a => result.Add(new BookingDto { BookingId = a.BookingId, Slut = a.Slut, Start = a.Start, LejemålId = a.LejemålId, Version = a.Version }));
             return result;
         }
 
@@ -45,7 +45,7 @@ namespace Vicevært.Api.Controllers
         {
             var booking = await _bookingQuery.GetBookingAsync(id);
             if (booking is null) return BadRequest();
-            return new BookingDto { BookingId = booking.BookingId, Slut = booking.Slut, Start = booking.Start, LejemålId = booking.LejemålId };
+            return new BookingDto { BookingId = booking.BookingId, Slut = booking.Slut, Start = booking.Start, LejemålId = booking.LejemålId, Version = booking.Version };
         }
     }
 }

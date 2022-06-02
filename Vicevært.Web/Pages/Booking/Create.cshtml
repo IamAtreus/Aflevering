@@ -46,8 +46,11 @@
                @Html.DisplayFor(x => x.Booking.LejemålId) eventuelt bruge som foreach
                @foreach (var item in Model.Lejemaal)
                {
-                   <option value="@item.LejemålId">@item.City, @item.Postcode</option>
-               }
+                                    if (item.IsBookable == true)
+                                    {
+                                        <option value="@item.LejemålId">@item.StreetName, @item.BuildingNumber, @item.SecondaryAddress, @item.City, @item.Postcode</option>
+                                    }
+                                }
 
             <span asp-validation-for="Booking.LejemålId" class="text-danger"></span>
             </select>
@@ -102,6 +105,8 @@
 
             </tr>
             </thead>
+
+
     </div>
   </div>
 
