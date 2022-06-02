@@ -21,7 +21,7 @@ namespace Vicevært.Web.Infrastructure
                 JsonSerializer.Serialize(bookingDto),
                 Encoding.UTF8,
                 MediaTypeNames.Application.Json);
-            await _client.PostAsync("https://localhost:49163/api/Booking", bookingDtoJson);
+            await _client.PostAsync("https://localhost:5001/api/Booking", bookingDtoJson);
         }
 
         async Task<BookingDto?> IBookingService.GetAsync(int id)
@@ -31,7 +31,7 @@ namespace Vicevært.Web.Infrastructure
 
         async Task<IEnumerable<BookingDto>> IBookingService.GetAsync()
         {
-            return await _client.GetFromJsonAsync<IEnumerable<BookingDto>>("https://localhost:49163/api/Booking");
+            return await _client.GetFromJsonAsync<IEnumerable<BookingDto>>("https://localhost:5001/api/Booking");
         }
 
     }

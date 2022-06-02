@@ -23,7 +23,7 @@ namespace Vicevært.Web.Infrastructure
                 JsonSerializer.Serialize(rekvisitionDto),
                 Encoding.UTF8,
                 MediaTypeNames.Application.Json);
-            await _client.PostAsync("https://localhost:49163/api/Rekvisition", rekvisitionDtoJson);
+            await _client.PostAsync("https://localhost:5001/api/Rekvisition", rekvisitionDtoJson);
 
         }
 
@@ -35,7 +35,7 @@ namespace Vicevært.Web.Infrastructure
         async Task<IEnumerable<RekvisitionDto>> IRekvisitionService.GetAsync()
         {
 
-            return await _client.GetFromJsonAsync<IEnumerable<RekvisitionDto>>($"https://localhost:49163/api/Rekvisition");
+            return await _client.GetFromJsonAsync<IEnumerable<RekvisitionDto>>($"https://localhost:5001/api/Rekvisition");
         }
     }
 }
