@@ -15,9 +15,7 @@
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      //"applicationUrl": "https://localhost:49159;http://localhost:5001", //7008
-      //"dotnetRunMessages": true
+      }
     },
     "IIS Express": {
       "commandName": "IISExpress",
@@ -27,7 +25,12 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-
-    
+    "Docker (1)": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "publishAllPorts": true,
+      "useSSL": true
+    }
   }
 }

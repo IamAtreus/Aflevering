@@ -18,9 +18,9 @@ builder.Services.AddDbContext<UserDbContext>(options =>
         x => { x.MigrationsAssembly("Vicevært.Web"); }));
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("Admin", policy => policy.RequireClaim("Admin"));
-    options.AddPolicy("Vicevært", policy => policy.RequireClaim("Vicevært"));
-    options.AddPolicy("Beboer", policy => policy.RequireClaim("Beboer"));
+    options.AddPolicy("Admin", policy => policy.RequireClaim("Kategori"));
+    options.AddPolicy("Vicevært", policy => policy.RequireClaim("Kategori"));
+    options.AddPolicy("Beboer", policy => policy.RequireClaim("Kategori"));
 });
 
 // Inject Identity
