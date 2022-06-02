@@ -38,7 +38,7 @@ public CreateModel(IBookingService bookingService, ILejemaalService lejemaalServ
         if (!ModelState.IsValid) return Page();
 
         await _bookingService.CreateAsync(Booking.GetAsBookingDto());
-        return RedirectToPage("./Index");
+        return RedirectToPage("./BookingView");
     }
 
     public class BookingCreateModel
@@ -59,7 +59,8 @@ public CreateModel(IBookingService bookingService, ILejemaalService lejemaalServ
             {
                 Start = Start,
                 Slut = Slut,
-                LejemålId = LejemålId
+                LejemålId = LejemålId,
+                Version = new byte[7]
             };
         }
     }
