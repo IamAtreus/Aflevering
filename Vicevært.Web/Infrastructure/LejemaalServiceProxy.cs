@@ -22,7 +22,7 @@ namespace Vicevært.Web.Infrastructure
 
         async Task<IEnumerable<LejemaalDto>> ILejemaalService.GetAsync()
         {
-            return await _client.GetFromJsonAsync<IEnumerable<LejemaalDto>>($"https://localhost:49159/api/Lejemaal");
+            return await _client.GetFromJsonAsync<IEnumerable<LejemaalDto>>($"https://localhost:49163/api/Lejemaal");
         }
     }
 }
