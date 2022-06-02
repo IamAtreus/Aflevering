@@ -1,12 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel;
+using Microsoft.AspNetCore.Authorization;
 using Vicevært.Contract;
 using Vicevært.Contract.Dtos;
 using static Vicevært.Web.Pages.Lejemaal.IndexModel;
 
 namespace Vicevært.Web.Pages.Booking;
-
+[Authorize(policy: "Admin")]
+[Authorize(policy: "Vicevært")]
+[Authorize(policy: "Beboer")]
 public class CreateModel : PageModel
 { 
 

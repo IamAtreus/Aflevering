@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Vicevært.Contract;
@@ -5,6 +6,8 @@ using Vicevært.Contract.Dtos;
 
 namespace Vicevært.Web.Pages.TidsRegistrering
 {
+    [Authorize(policy: "Admin")]
+    [Authorize(policy: "Vicevært")]
     public class IndexModel : PageModel
     {
         private readonly ITidsRegistreringService _tidsRegistreringService;

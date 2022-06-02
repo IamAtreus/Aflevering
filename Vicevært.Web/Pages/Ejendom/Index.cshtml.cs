@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Vicevært.BoligData.DataAccess;
@@ -5,6 +6,9 @@ using Vicevært.BoligData.Models;
 
 namespace Vicevært.Web.Pages.Ejendom
 {
+    [Authorize(policy: "Admin")]
+    [Authorize(policy: "Vicevært")]
+    [Authorize(policy: "Beboer")]
     public class IndexModel : PageModel
     {
 

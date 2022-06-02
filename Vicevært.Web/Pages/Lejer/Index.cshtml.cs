@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -6,8 +7,11 @@ using Vicevært.Contract.Dtos;
 
 namespace Vicevært.Web.Pages.Lejer
 {
-    
-        public class IndexModel : PageModel
+    [Authorize(policy: "Admin")]
+    [Authorize(policy: "Vicevært")]
+    [Authorize(policy: "Beboer")]
+
+    public class IndexModel : PageModel
         {
             private readonly ILejerService _lejerService;
 

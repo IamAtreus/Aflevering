@@ -22,56 +22,57 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav">
 
 
 
 
-            <ul class="navbar-nav ms-3"> 
-                                 <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Rekvisitioner
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="/Rekvisition/Create">Opret rekvisition</a></li>
-            <li><a class="dropdown-item" href="/Rekvisition">Registrer tid</a></li>
-          </ul>
-        </li>
+                <ul class="navbar-nav ms-3"> 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Rekvisitioner
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="/Rekvisition/Create">Opret rekvisition</a></li>
+                            <li><a class="dropdown-item" href="/Rekvisition">Registrer tid</a></li>
+                        </ul>
+                    </li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="/Ejendom">Ejendomme</a>
-              </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Ejendom">Ejendomme</a>
+                    </li>
 
 
               
 
-                                 <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Lejemål
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="/Lejemaal">Se alle lejemål</a></li>
-            <li><a class="dropdown-item" href="/Booking">Book lejelejlighed</a></li>
-            <li><a class="dropdown-item" href="/Booking/BookingView">Se alle bookings</a></li>
-          </ul>
-            </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Lejemål
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="/Lejemaal">Se alle lejemål</a></li>
+                            <li><a class="dropdown-item" href="/Booking">Book lejelejlighed</a></li>
+                            <li><a class="dropdown-item" href="/Booking/BookingView">Se alle bookings</a></li>
+                        </ul>
+                    </li>
 
 
-                <li class="nav-item">
-                <a class="nav-link" href="/Lejer">Lejer</a>
-                </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Lejer">Lejer</a>
+                    </li> 
 
+                </ul>
+                <a href="/Account/Login" class="btn btn ms-auto">Log ind</a>
 
-            </ul>
-            <a href="/Account/Login" class="btn btn ms-auto">Log ind</a>
-          </div>
+            </div>
+            <div class="mr-2">
+                <partial name="_LoginStatusPartial"/>
+            </div>
+
         </div>
       </nav>
 
-@*        <div class="mr-2">
-            <partial name="_LoginStatusPartial"/>
-        </div>
-*@
+
 
 
     </header>

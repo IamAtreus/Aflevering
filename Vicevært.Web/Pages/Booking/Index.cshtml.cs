@@ -8,10 +8,15 @@ using Vicevært.Infrastructure.Database;
 using Vicevært.Contract;
 using Vicevært.Contract.Dtos;
 using System.ComponentModel;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace Vicevært.Web.Pages.Booking
 {
+    [Authorize(policy: "Admin")]
+    [Authorize(policy: "Vicevært")]
+    [Authorize(policy: "Beboer")]
+
     public class IndexModel : PageModel
     {
         private readonly ILejemaalService _lejemaalService;

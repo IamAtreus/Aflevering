@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,8 @@ using Vicevært.Infrastructure.Database;
 
 namespace Vicevært.Web.Pages.Rekvisition
 {
+    [Authorize(policy: "Admin")]
+    [Authorize(policy: "Vicevært")]
     public class DeleteModel : PageModel
     {
         private readonly Vicevært.Infrastructure.Database.DatabaseContext _context;
