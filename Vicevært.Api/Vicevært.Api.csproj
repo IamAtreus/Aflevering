@@ -28,9 +28,5 @@
     <ProjectReference Include="..\Vicevært.Infrastructure\Vicevært.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="..\.dockerignore" />
-  </ItemGroup>
-
 
 </Project>
