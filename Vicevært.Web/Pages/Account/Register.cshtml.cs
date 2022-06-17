@@ -8,7 +8,7 @@ using Vicevært.Infrastructure.Database.Account;
 
 namespace Vicevært.Web.Pages.Account
 {
-    //[Authorize(policy: "Admin")]
+    [Authorize(policy: "Admin")]
     public class RegisterModel : PageModel
     {
         private readonly UserManager<User> userManager;
