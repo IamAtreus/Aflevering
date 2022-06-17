@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  vicevrt.api:
+    image: ${DOCKER_REGISTRY-}vicevrtapi
+    build:
+      context: .
+      dockerfile: Vicevært.Api/Dockerfile
+    ports:
+      - "5001:5001"
+    expose:
+      - "5001"
+
+  vicevrt.web:
+    image: ${DOCKER_REGISTRY-}vicevrtweb
+    build:
+      context: .
+      dockerfile: Vicevært.Web/Dockerfile
+
