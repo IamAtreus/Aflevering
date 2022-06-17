@@ -15,5 +15,6 @@ namespace Vicevært.Infrastructure.Database.Account
         public string? PostNummer { get; set; }
         public string? By { get; set; }
         public string? Telefon { get; set; }
+        public string? BrugerIdNr { get; set; }
     }
 }
