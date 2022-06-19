@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  vicevrt.api:
+    image: ${DOCKER_REGISTRY-}vicevrtapi
+    build:
+      context: .
+      dockerfile: Vicevært.Api/Dockerfile
+
+  vicevrt.web:
+    image: ${DOCKER_REGISTRY-}vicevrtweb
+    build:
+      context: .
+      dockerfile: Vicevært.Web/Dockerfile
+

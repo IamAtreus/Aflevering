@@ -40,6 +40,7 @@ namespace Vicevært.Web.Pages.Account
                 PostNummer = RegisterViewModel.PostNummer,
                 By = RegisterViewModel.By,
                 Telefon = RegisterViewModel.Telefon,
+                BrugerIdNr = RegisterViewModel.BrugerIdNr,
 
             };
 
@@ -86,5 +87,6 @@ namespace Vicevært.Web.Pages.Account
         [Required]
         [DataType(dataType: DataType.Password)]
         public string Password { get; set; }
+        public string BrugerIdNr { get; set; }
     }
 }
